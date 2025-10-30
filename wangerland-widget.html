@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wangerland Widget – Veranstaltungsdaten Demo</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #004c6d;
+      color: white;
+      padding: 1.5rem 2rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.6rem;
+    }
+    main {
+      max-width: 960px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+    h2 {
+      color: #004c6d;
+      border-bottom: 2px solid #004c6d;
+      padding-bottom: 0.3rem;
+    }
+    pre {
+      background: #eef2f6;
+      padding: 1rem;
+      overflow-x: auto;
+      border-left: 3px solid #004c6d;
+      border-radius: 4px;
+    }
+    .example {
+      background: #f0f5f8;
+      border: 1px solid #cfd9e0;
+      padding: 1rem;
+      margin-top: 1.5rem;
+      border-radius: 6px;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      margin: 3rem 0 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Integration touristischer Datensätze – Wangerland (Demo)</h1>
+  </header>
+
+  <main>
+    <p>Dieses Beispiel zeigt, wie sich touristische Daten wie Veranstaltungen aus dem Wangerland-System mittels JavaScript-Widget einbinden lassen.  
+       Die aktuelle, empfohlene Quelle ist <strong>https://pages.destination.one</strong>.</p>
+
+    <h2>1. Beispiel – Veranstaltungen</h2>
+    <p>Der folgende Code zeigt alle Veranstaltungen, die über das System bereitgestellt werden.  
+       Die Ausgabe erscheint automatisch im definierten Ziel‑Element mit der ID <code>et4pages</code>.</p>
+
+    <pre><code>&lt;div id="et4pages"&gt;&lt;/div&gt;
+&lt;script 
+  id="et4pages"
+  type="text/javascript"
+  src="https://pages.destination.one/de/wangerland/default/search/Event?i_target=et4pages"&gt;
+&lt;/script&gt;
+</code></pre>
+
+    <div class="example">
+      <h3>Live-Vorschau</h3>
+      <div id="et4pages"></div>
+      <script 
+        id="et4pages" 
+        type="text/javascript" 
+        src="https://pages.destination.one/de/wangerland/default/search/Event?i_target=et4pages">
+      </script>
+    </div>
+
+    <h2>2. Weitere Themen (Codebeispiele)</h2>
+    <p>Analog lassen sich auch POI und Gastronomie integrieren, indem in der URL der Themenbereich angepasst wird:</p>
+
+    <h3>A) Points of Interest</h3>
+    <pre><code>&lt;div id="poi-content"&gt;&lt;/div&gt;
+&lt;script 
+  type="text/javascript"
+  src="https://pages.destination.one/de/wangerland/default/search/POI?i_target=poi-content"&gt;
+&lt;/script&gt;
+</code></pre>
+
+    <h3>B) Gastronomie</h3>
+    <pre><code>&lt;div id="gastro-content"&gt;&lt;/div&gt;
+&lt;script 
+  type="text/javascript"
+  src="https://pages.destination.one/de/wangerland/default/search/Gastro?i_target=gastro-content"&gt;
+&lt;/script&gt;
+</code></pre>
+
+    <h2>3. Hinweise</h2>
+    <ul>
+      <li>Jede Instanz sollte eine **eigene Ziel‑ID** besitzen (z.&nbsp;B. <code>et4pages</code>, <code>poi-content</code> usw.).</li>
+      <li>Das Widget erzeugt automatisch den kompletten Inhaltsbereich.</li>
+      <li>Es funktioniert nur mit <strong>HTTPS und aktivem Server</strong>, nicht im lokalen Datei‑Modus (<code>file://</code>).</li>
+      <li>Design‑Anpassungen sind über deine eigene CSS‑Datei möglich.</li>
+    </ul>
+  </main>
+
+  <footer>
+    © 2024 Wangerland Touristik – Demo für destination.one‑Widgets
+  </footer>
+</body>
+</html>
