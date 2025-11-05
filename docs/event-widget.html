@@ -48,28 +48,68 @@
     </nav>
   </div>
 </header>
-
-  <section class="mx-auto max-w-7xl px-4 sm:px-6 py-8">
-    <div class="grid md:grid-cols-5 gap-6 items-stretch">
-      <<!-- So geht's -->
-      <div class="md:col-span-3 bg-white border border-border rounded-2xl p-6 shadow-soft">
-        <h1 class="text-2xl font-semibold text-primary">Veranstaltungen – so bindest du das Widget ein</h1>
-        <ol class="mt-3 text-sm text-ink/80 list-decimal pl-5 space-y-2">
-          <li><strong>Ziel‑Element anlegen:</strong> <code>&lt;div id="et4pages"&gt;&lt;/div&gt;</code></li>
-          <li><strong>Script hinzufügen:</strong> das ET4‑Script mit <code>i_target=et4pages</code> direkt darunter einfügen.</li>
-          <li><strong>Mehrere Instanzen?</strong> Eigene IDs verwenden (z. B. <code>et4pages-1</code>, <code>et4pages-2</code>).</li>
-          <li><strong>Layout beruhigen:</strong> dem Ziel‑Element eine Mindesthöhe geben (z. B. via CSS/Tailwind).</li>
-          <li><strong>DSGVO‑Hinweis:</strong> Das Widget lädt externe Inhalte; IP‑Übermittlung an den Anbieter ist technisch nötig.</li>
-        </ol>
-        <p class="mt-3 text-sm text-ink/70">Weiter unten findest du die Live‑Vorschau und zwei Copy‑Paste‑Snippets (dein Wunsch‑Snippet und die empfohlene Variante).</p>
+	
+<section class="mx-auto max-w-7xl px-4 sm:px-6 py-8">
+  <div class="grid md:grid-cols-5 gap-6 items-stretch">
+    <div class="md:col-span-3 bg-white border border-border rounded-2xl p-6 shadow-soft">
+      <h1 class="text-2xl font-semibold text-primary">Veranstaltungen – Widget einbinden</h1>
+      <ol class="mt-3 text-sm text-ink/80 list-decimal pl-5 space-y-2">
+        <li>Zugriff auf die eigene Website prüfen.</li>
+        <li>Im Content Management System (Website) ein Modulbaustein wie <em>„Custom HTML“ / „Eigener Code“ / „HTML-Block“</em> nutzen
+            oder in einem Text-/Inhaltsfeld in den <em>Quellcode-/HTML-Modus</em> wechseln.</li>
+        <li>Den folgenden Code oder einen der unten aufgeführten Beispiele einfügen:</li>
+      </ol>
+		
+<section class="mx-auto max-w-7xl px-4 sm:px-6 py-10">
+    <div class="grid md:grid-cols-2 gap-6 items-start">
+      <div class="bg-white border border-border rounded-2xl p-6 shadow-soft">
+        <h3 class="text-lg font-semibold text-primary">Veranstaltungskalender für 7 Tage</h3>
+        <p class="mt-2 text-sm text-ink/70">Dieser Code kann direkt in die Seite eingefügt werden.</p>
+        <div class="mt-3 flex justify-end">
+          <button class="copy-btn rounded-xl border border-border px-3 py-1.5 text-sm" data-copy-target="#user-snippet">Code kopieren</button>
+        </div>
+<pre id="user-snippet" class="mt-2 text-sm overflow-auto"><code>&lt;script 
+	id=&quot;et4pages&quot; 
+	type=&quot;text/javascript&quot; 
+	src=&quot;https://willkommen.wangerland.de/de/default/search/Event/mode:next_days,7/sort:chronological?i_target=et4pages&quot;&gt;
+&lt;/script&gt;</code></pre>
+        <p class="mt-3 text-xs text-ink/60">Hinweis: Durch Änderungen von (mode:next_days,7) kann der Zeitraum angepasst werden. Für 2 Wochen bspw. 14 statt 7 eingeben</p>
       </div>
+
+      <div class="bg-white border border-border rounded-2xl p-6 shadow-soft">
+        <h3 class="text-lg font-semibold text-primary">Veranstaltungskalender mit angezeigter Karte (3-Monate)</h3>
+        <p class="mt-2 text-sm text-ink/70">Mit diesem Script Baustein wird der Veranstaltungskalender mit Ort auf der Karte angezeigt.</p>
+        <div class="mt-3 flex justify-end">
+          <button class="copy-btn rounded-xl border border-border px-3 py-1.5 text-sm" data-copy-target="#recommended-snippet">Code kopieren</button>
+        </div>
+<pre id="recommended-snippet" class="mt-2 text-sm overflow-auto"><code>&lt;div id="et4pages"&gt;&lt;/div&gt;
+&lt;script defer src="https://willkommen.wangerland.de/de/wangerland/search/Event/Lat:53.68612899773418/Lng:8.017115404777904/all:all/mode:next_months,3/sort:chronological/view:map,half?i_target=et4pages"&gt;&lt;/script&gt;</code></pre>
+        <ul class="mt-3 text-sm text-ink/70 list-disc pl-5">
+          <li>Die Karte kann anschließend auch wieder deaktiviert werden durch den Nutzenden</li><li>Mobil ist die Karte ausgeblendet.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+		
+      <pre class="mt-3 text-xs bg-gray-50 border border-border rounded-lg p-3 overflow-x-auto"><code>&lt;script 
+  id="et4pages" 
+  type="text/javascript" 
+  src="https://willkommen.wangerland.de/de/default/search/Event/mode:next_months,3/sort:chronological?i_target=et4pages"&gt;
+&lt;/script&gt;</code></pre>
+
+      <p class="mt-3 text-sm text-ink/70">
+        Hinweis: Mehrere Widgets auf einer Seite sind nicht möglich (nur einmal einbinden).
+      </p>
+      <p class="mt-2 text-sm text-ink/70">
+        Kein Zugriff vorhanden? Den obigen Code oder diese Seite an die betreuende Agentur/den Webmaster weiterleiten und um Einbau bitten.
+      </p>
+    </div>
        <!-- Hilfe benötigt -->
       <div class="md:col-span-2 bg-white border border-border rounded-2xl p-6 shadow-soft">
         <h2 class="text-xl font-semibold text-primary">Hilfe benötigt?</h2>
-        <p class="mt-3 text-sm leading-relaxed">Wir helfen gern bei Einbindung, Styling oder Fehlern.</p>
+        <p class="mt-3 text-sm leading-relaxed">Wir helfen gern bei Einbindung und bieten unsere Hilfe in der Kommunikation mit der Webagentur an.</p>
         <div class="mt-4 flex gap-3">
           <a class="rounded-xl bg-primary text-white px-4 py-2" href="mailto:info@wangerland.de">E‑Mail senden</a>
-          <a class="rounded-xl border border-border px-4 py-2" href="index.html#referenzen">Referenzen</a>
         </div>
       </div>
     </div>
@@ -91,38 +131,6 @@
       </div>
     </div>
   </section>
-
-  <section class="mx-auto max-w-7xl px-4 sm:px-6 py-10">
-    <div class="grid md:grid-cols-2 gap-6 items-start">
-      <div class="bg-white border border-border rounded-2xl p-6 shadow-soft">
-        <h3 class="text-lg font-semibold text-primary">Ihr Code‑Baustein (wie gewünscht)</h3>
-        <p class="mt-2 text-sm text-ink/70">Diesen Snippet können Ihre Partner:innen direkt in ihre Seite einfügen.</p>
-        <div class="mt-3 flex justify-end">
-          <button class="copy-btn rounded-xl border border-border px-3 py-1.5 text-sm" data-copy-target="#user-snippet">Code kopieren</button>
-        </div>
-<pre id="user-snippet" class="mt-2 text-sm overflow-auto"><code>&lt;script 
-	id=&quot;et4pages&quot; 
-	type=&quot;text/javascript&quot; 
-	src=&quot;https://willkommen.wangerland.de/de/default/search/Event/mode:next_months,3/sort:chronological?i_target=et4pages&quot;&gt;
-&lt;/script&gt;</code></pre>
-        <p class="mt-3 text-xs text-ink/60">Hinweis: Diese Variante setzt die Ziel‑ID auf das &lt;script&gt; selbst. Funktioniert in vielen Fällen, kann aber bei mehrfachen Einbindungen unübersichtlich werden.</p>
-      </div>
-
-      <div class="bg-white border border-border rounded-2xl p-6 shadow-soft">
-        <h3 class="text-lg font-semibold text-primary">Empfohlen (sauber getrenntes Ziel‑Element)</h3>
-        <p class="mt-2 text-sm text-ink/70">Robust bei mehreren Instanzen und besser für Layout‑Kontrolle.</p>
-        <div class="mt-3 flex justify-end">
-          <button class="copy-btn rounded-xl border border-border px-3 py-1.5 text-sm" data-copy-target="#recommended-snippet">Code kopieren</button>
-        </div>
-<pre id="recommended-snippet" class="mt-2 text-sm overflow-auto"><code>&lt;div id="et4pages"&gt;&lt;/div&gt;
-&lt;script defer src="https://willkommen.wangerland.de/de/wangerland/default/search/Event/Lat:53.68612670932186/Lng:8.017145762400807/all:all/mode:next_days,3/sort:chronological?i_target=et4pages"&gt;&lt;/script&gt;</code></pre>
-        <ul class="mt-3 text-sm text-ink/70 list-disc pl-5">
-          <li>Quelle: willkommen.wangerland.de</li><li>Ziel-ID (<code>i_target</code>) anpassen, falls mehrfach genutzt.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
 
 <footer class="border-t border-border mt-10">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 py-8 grid gap-6 md:grid-cols-3 items-start">
