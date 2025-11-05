@@ -4,10 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Highlight – Widget – Wangerland</title>
-  <meta name="description" content="Integration Highlight-Widget inkl. Copy-Paste-Anleitung." />
+  <meta name="description" content="Integration Veranstaltungen-Widget inkl. Copy-Paste-Anleitung." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -30,120 +33,138 @@
       }
     }
   </script>
-  <style>:root { color-scheme: light; } html { scroll-behavior: smooth; }</style>
+  <style>:root{color-scheme:light}html{scroll-behavior:smooth}</style>
 </head>
 <body class="bg-bg text-ink font-sans">
-<header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-border">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 py-4 flex items-center justify-between gap-4">
-    <a href="index.html" class="inline-flex items-center gap-3 text-primary font-semibold" aria-label="Startseite">
-      <img src="https://www.wangerland.de/fileadmin/Mediendatenbank/Logos/Logonutzung/Petrol_auf_hellem_Hintergrund.jpg" alt="Wangerland" class="h-10 w-auto" />
-      <span class="hidden sm:inline">Wangerland Widgets</span>
-    </a>
-    <nav class="hidden md:flex items-center gap-5 text-sm">
-      <a class="hover:text-primary" href="event-widget.html">Veranstaltungen</a>
-      <a class="hover:text-primary" href="poi-widget.html">POI</a>
-      <a class="hover:text-primary" href="gastro-widget.html">Gastro</a>
-      <a class="hover:text-primary" href="highlight-widget.html">Highlight</a>
-      <a class="hover:text-primary" href="nordsee-widget.html">Nordsee</a>
-    </nav>
-  </div>
-</header>
+
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-border">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 py-4 flex items-center justify-between gap-4">
+      <a href="index.html" class="inline-flex items-center gap-3 text-primary font-semibold" aria-label="Startseite">
+        <img src="https://www.wangerland.de/fileadmin/Mediendatenbank/Logos/Logonutzung/Petrol_auf_hellem_Hintergrund.jpg" alt="Wangerland" class="h-10 w-auto" />
+        <span class="hidden sm:inline">Wangerland Widgets</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-5 text-sm" aria-label="Hauptnavigation">
+        <a class="hover:text-primary" href="event-widget.html" aria-current="page">Veranstaltungen</a>
+        <a class="hover:text-primary" href="poi-widget.html">POI</a>
+        <a class="hover:text-primary" href="gastro-widget.html">Gastro</a>
+        <a class="hover:text-primary" href="highlight-widget.html">Highlight</a>
+        <a class="hover:text-primary" href="nordsee-widget.html">Nordsee</a>
+      </nav>
+    </div>
+  </header>
+
 
   <section class="mx-auto max-w-7xl px-4 sm:px-6 py-8">
     <div class="grid md:grid-cols-5 gap-6 items-stretch">
       <div class="md:col-span-3 bg-white border border-border rounded-2xl p-6 shadow-soft">
-        <h1 class="text-2xl font-semibold text-primary">Highlight – Widget</h1>
-        <p class="mt-3 leading-relaxed">So bindest du das Highlight-Widget auf deiner Website ein. Unten findest du die Live-Vorschau und die Copy‑Paste‑Snippets.</p>
+        <h1 class="text-2xl font-semibold text-primary">Highlight – Widget einbinden</h1>
+        <ol class="mt-3 text-sm text-ink/80 list-decimal pl-5 space-y-2">
+          <li>Zugriff auf die eigene Website prüfen.</li>
+          <li>Im CMS einen Baustein wie <em>„Custom HTML“ / „Eigener Code“ / „HTML-Block“</em> wählen
+              oder in einem Text-/Inhaltsfeld in den <em>Quellcode-/HTML-Modus</em> wechseln.</li>
+          <li>Den folgenden Code einfügen (nur einmal pro Seite möglich):</li>
+        </ol>
+
+  
+        <div class="mt-3 flex justify-end">
+          <button class="copy-btn rounded-xl border border-border px-3 py-1.5 text-sm" data-copy-target="#snippet-main">Code kopieren</button>
+        </div>
+        <pre id="snippet-main" class="mt-2 text-sm overflow-auto bg-gray-50 border border-border rounded-lg p-3"><code>&lt;script 
+  id=&quot;et4pages&quot; 
+  type=&quot;text/javascript&quot; 
+  src=&quot;https://willkommen.wangerland.de/de/default/search/Event/highlight:true/highlight:true/mode:next_months,3/sort:relevance?i_target=et4pages&quot;&gt;
+&lt;/script&gt;</code></pre>
+
+        <p class="mt-3 text-xs text-ink/60">
+          Der Bereich /highlight:true/ definiert alle Highlight Veranstaltungen in der URL.
+        </p>
+    
+
       </div>
+
+   
       <div class="md:col-span-2 bg-white border border-border rounded-2xl p-6 shadow-soft">
-        <h2 class="text-xl font-semibold text-primary">Kontakt & Infos</h2>
-        <p class="mt-3 text-sm leading-relaxed">Hilfe benötigt? Wir helfen gern. Für individuelle Einbindungen oder Styling‑Fragen melde dich.</p>
-        <ul class="mt-3 text-sm text-ink/70 list-disc pl-5">
-          <li>E-Mail: <a class="text-accent underline underline-offset-2" href="mailto:info@wangerland.de">info@wangerland.de</a></li>
-          <li>Hinweis: Jede Instanz braucht eine eigene Ziel‑ID.</li>
-        </ul>
+        <h2 class="text-xl font-semibold text-primary">Unterstützung benötigt?</h2>
+        <p class="mt-3 text-sm leading-relaxed">Wir helfen gern bei Einbindung und bieten unsere Hilfe in der Kommunikation mit der Webagentur an.</p>
+        <!-- Bruch zwischen Text und Button -->
+        <div class="mt-4 space-y-3">
+          <p class="text-sm text-ink/70">
+            Kein Zugriff vorhanden? Den oben stehenden Code oder diese Seite an die betreuende Agentur/den Webmaster weiterleiten und um Einbau bitten.
+          </p>
+          <a class="inline-block rounded-xl bg-primary text-white px-4 py-2" href="mailto:aktuell@wangerland.de">E‑Mail senden</a>
+        </div>
       </div>
     </div>
   </section>
+
 
   <section class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
     <div class="bg-white border-t border-b border-border">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 py-6">
         <header class="mb-4 flex items-center justify-between">
-          <h2 class="text-xl font-semibold text-primary">Live‑Vorschau</h2>
-          <span class="text-xs text-ink/60">Direkt eingebunden</span>
+          <h2 class="text-xl font-semibold text-primary">Beispiel für Highlight-Einbindung</h2>
+          <span class="text-xs text-ink/60"> Sortiert nach Relevanz sort:relevance</span>
         </header>
       </div>
+
       <div class="px-0 relative">
         <div class="md:max-w-7xl md:mx-auto md:my-4 md:rounded-2xl md:border md:border-border md:bg-white md:shadow-soft md:p-4">
-          <div id="widget-target" class="w-full min-h-[520px]"></div>
-<!-- TODO: Ersetze src durch finale Widget‑URL -->
-<script defer src="https://example.com/widgets/placeholder.js?i_target=widget-target"></script>
+          <div id="et4pages" class="w-full min-h-[560px]"></div>
+          <script defer src="https://willkommen.wangerland.de/de/default/search/Event/highlight:true/highlight:true/mode:next_months,3/sort:relevance?i_target=et4pages"></script>
         </div>
       </div>
     </div>
   </section>
-  
-  <section class="mx-auto max-w-7xl px-4 sm:px-6 pb-4">
-  <div class="grid gap-3 md:grid-cols-3">
-    <div class="rounded-2xl bg-primary text-white shadow-soft p-6 text-center">
-      <div class="text-3xl font-semibold tracking-tight">1&nbsp;Mio</div>
-      <div class="mt-1 text-sm text-white/80">Reichweite</div>
-    </div>
-    <div class="rounded-2xl bg-primary text-white shadow-soft p-6 text-center">
-      <div class="text-3xl font-semibold tracking-tight">100.000</div>
-      <div class="mt-1 text-sm text-white/80">Aufrufe</div>
-    </div>
-    <div class="rounded-2xl bg-primary text-white shadow-soft p-6 text-center">
-      <div class="text-3xl font-semibold tracking-tight">10%</div>
-      <div class="mt-1 text-sm text-white/80">Klickrate</div>
-    </div>
-  </div>
-    
-</section>
-  <section class="mx-auto max-w-7xl px-4 sm:px-6 py-10">
-    <div class="grid md:grid-cols-2 gap-6 items-start">
-      <div class="bg-white border border-border rounded-2xl p-6 shadow-soft">
-        <h3 class="text-lg font-semibold text-primary">Einbindung – Copy & Paste</h3>
-        <p class="mt-2 text-sm text-ink/70">Füge folgenden Code an der gewünschten Stelle deiner Seite ein.</p>
-<pre class="mt-4 text-sm overflow-auto"><code><div id="widget-target"></div>
-<script defer src="https://example.com/widgets/placeholder.js?i_target=widget-target"></script></code></pre>
-        <ul class="mt-3 text-sm text-ink/70 list-disc pl-5">
-          <li>Ersetze die Script‑URL durch die produktive Widget‑Quelle.</li><li>Eigene Ziel‑ID verwenden.</li>
-        </ul>
-      </div>
-      <div class="bg-white border border-border rounded-2xl p-6 shadow-soft">
-        <h3 class="text-lg font-semibold text-primary">Styling/Tipps</h3>
-        <ul class="mt-2 text-sm text-ink/70 list-disc pl-5">
-          <li>Setze eine Mindesthöhe am Ziel‑Element, um Layout‑Sprünge zu vermeiden.</li>
-          <li>Passe Abstände mit Tailwind oder eigenem CSS an deine Seite an.</li>
-          <li>Für mehrere Instanzen: jeweils eigene Ziel‑IDs verwenden.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
 
 
-<footer class="border-t border-border mt-10">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 py-8 grid gap-6 md:grid-cols-3 items-start">
-    <div class="text-sm text-ink/80">
-      <p class="font-semibold text-primary">Hinweis zu externen Inhalten</p>
-      <p class="mt-1">Auf dieser Seite erfolgt kein Tracking. Einige Widgets laden Inhalte von externen Diensten (z.&nbsp;B. willkommen.wangerland.de). Dabei wird technisch bedingt Ihre IP‑Adresse an den jeweiligen Anbieter übermittelt. Es werden keine Cookies zu Werbe‑ oder Analysezwecken gesetzt.</p>
+  <footer class="border-t border-border mt-10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 py-8 grid gap-6 md:grid-cols-3 items-start">
+      <div class="text-sm text-ink/80">
+        <p class="font-semibold text-primary">Hinweis</p>
+        <p class="mt-1">Auf dieser Seite erfolgt kein Tracking. Einige Widgets laden Inhalte von externen Diensten (z.&nbsp;B. willkommen.wangerland.de).</p>
+      </div>
+      <nav class="text-sm text-ink/80" aria-label="Footer – Rechtliches">
+        <p class="font-semibold text-primary">Rechtliches</p>
+        <ul class="mt-2 space-y-1">
+          <li><a class="hover:text-primary underline underline-offset-2" href="impressum.html">Impressum</a></li>
+          <li><a class="hover:text-primary underline underline-offset-2" href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </nav>
+      <div class="text-sm text-ink/70 md:text-right">
+        <p>© <span id="year"></span> Wangerland Touristik</p>
+        <a class="mt-1 inline-block hover:text-primary underline underline-offset-2" href="index.html#referenzen">Referenzen</a>
+      </div>
     </div>
-    <nav class="text-sm text-ink/80">
-      <p class="font-semibold text-primary">Rechtliches</p>
-      <ul class="mt-2 space-y-1">
-        <li><a class="hover:text-primary underline underline-offset-2" href="impressum.html">Impressum</a></li>
-        <li><a class="hover:text-primary underline underline-offset-2" href="datenschutz.html">Datenschutz</a></li>
-      </ul>
-    </nav>
-    <div class="text-sm text-ink/70 md:text-right">
-      <p>© <span id="year"></span> Wangerland Touristik</p>
-      <a class="mt-1 inline-block hover:text-primary underline underline-offset-2" href="index.html#referenzen">Referenzen</a>
-    </div>
-  </div>
-</footer>
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const target = document.querySelector(btn.dataset.copyTarget);
+        if (!target) return;
+        const codeText = target.innerText;
+        try {
+          await navigator.clipboard.writeText(codeText);
+          const old = btn.textContent;
+          btn.textContent = 'Kopiert';
+          btn.disabled = true;
+          setTimeout(() => { btn.textContent = old; btn.disabled = false; }, 1500);
+        } catch {
+          // Fallback
+          const sel = window.getSelection();
+          const range = document.createRange();
+          range.selectNodeContents(target);
+          sel.removeAllRanges();
+          sel.addRange(range);
+          document.execCommand('copy');
+          sel.removeAllRanges();
+          const old = btn.textContent;
+          btn.textContent = 'Kopiert';
+          setTimeout(() => { btn.textContent = old; }, 1500);
+        }
+      });
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-
