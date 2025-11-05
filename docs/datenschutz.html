@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Datenschutz – Wangerland Widgets</title>
+  <meta name="description" content="Datenschutzhinweise für diese Seite" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#002341',
+            accent:  '#007996',
+            ink:     '#111111',
+            border:  '#e6e6e6',
+            bg:      '#ffffff',
+            hilite:  '#ffe500'
+          },
+          fontFamily: {
+            sans: ['Inter','system-ui','-apple-system','Segoe UI','Arial','sans-serif']
+          },
+          boxShadow: { soft: '0 10px 30px rgba(0,0,0,.06)' },
+          borderRadius: { '2xl': '1rem' }
+        }
+      }
+    }
+  </script>
+  <style>:root { color-scheme: light; } html { scroll-behavior: smooth; }</style>
+</head>
+<body class="bg-bg text-ink font-sans">
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-border">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 py-4 flex items-center justify-between gap-4">
+    <a href="index.html" class="inline-flex items-center gap-3 text-primary font-semibold" aria-label="Startseite">
+      <img src="https://www.wangerland.de/fileadmin/Mediendatenbank/Logos/Logonutzung/Petrol_auf_hellem_Hintergrund.jpg" alt="Wangerland" class="h-10 w-auto" />
+      <span class="hidden sm:inline">Wangerland Widgets</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-5 text-sm">
+      <a class="hover:text-primary" href="event-widget.html">Veranstaltungen</a>
+      <a class="hover:text-primary" href="poi-widget.html">POI</a>
+      <a class="hover:text-primary" href="gastro-widget.html">Gastro</a>
+      <a class="hover:text-primary" href="highlight-widget.html">Highlight</a>
+      <a class="hover:text-primary" href="nordsee-widget.html">Nordsee</a>
+    </nav>
+  </div>
+</header>
+
+<section class="mx-auto max-w-7xl px-4 sm:px-6 py-10 space-y-8">
+  <div class="bg-white border border-border rounded-2xl p-6 shadow-soft">
+    <h1 class="text-2xl font-semibold text-primary">Datenschutz</h1>
+    <p class="mt-3 text-sm text-ink/70">Kurzfassung für diese Seite:</p>
+    <ul class="mt-3 text-sm text-ink/80 list-disc pl-5">
+      <li>Es erfolgt kein Tracking und keine Analyse der Nutzung.</li>
+      <li>Einige Widgets laden Inhalte von externen Diensten (z. B. willkommen.wangerland.de). Dabei wird technisch bedingt Ihre IP‑Adresse an den jeweiligen Anbieter übermittelt.</li>
+      <li>Es werden keine Cookies zu Werbe‑ oder Analysezwecken gesetzt.</li>
+    </ul>
+  </div>
+
+  <div class="bg-white border border-border rounded-2xl p-6 shadow-soft">
+    <h2 class="text-lg font-semibold text-primary">1. Verantwortlicher</h2>
+    <p class="mt-2 text-sm text-ink/80">[Name/Anschrift/Kontakt einfügen]</p>
+  </div>
+
+  <div class="bg-white border border-border rounded-2xl p-6 shadow-soft">
+    <h2 class="text-lg font-semibold text-primary">2. Verarbeitungen</h2>
+    <p class="mt-2 text-sm text-ink/80">Betriebsnotwendige Server-Logs (inkl. IP‑Adresse) werden zur Auslieferung der Seite verarbeitet und nach Maßgabe des Hosters gelöscht. Bei eingebetteten Widgets gelten die Datenschutzhinweise des jeweiligen Anbieters.</p>
+  </div>
+
+  <div class="bg-white border border-border rounded-2xl p-6 shadow-soft">
+    <h2 class="text-lg font-semibold text-primary">3. Rechte der Betroffenen</h2>
+    <p class="mt-2 text-sm text-ink/80">Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Wenden Sie sich hierfür an die oben genannten Kontaktdaten.</p>
+  </div>
+
+  <div class="bg-white border border-border rounded-2xl p-6 shadow-soft">
+    <h2 class="text-lg font-semibold text-primary">4. Drittanbieter-Hinweis</h2>
+    <p class="mt-2 text-sm text-ink/80">Für die eingebundenen externen Widgets verweisen wir ergänzend auf die Datenschutzhinweise des Anbieters (z. B. Destination.One / willkommen.wangerland.de).</p>
+  </div>
+
+  <p class="text-xs text-ink/60">Hinweis: Diese Vorlage ersetzt keine Rechtsberatung und muss projektspezifisch angepasst werden.</p>
+</section>
+
+<footer class="border-t border-border mt-10">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 py-8 grid gap-6 md:grid-cols-3 items-start">
+    <div class="text-sm text-ink/80">
+      <p class="font-semibold text-primary">Hinweis zu externen Inhalten</p>
+      <p class="mt-1">Auf dieser Seite erfolgt kein Tracking. Einige Widgets laden Inhalte von externen Diensten (z.&nbsp;B. willkommen.wangerland.de). Dabei wird technisch bedingt Ihre IP‑Adresse an den jeweiligen Anbieter übermittelt. Es werden keine Cookies zu Werbe‑ oder Analysezwecken gesetzt.</p>
+    </div>
+    <nav class="text-sm text-ink/80">
+      <p class="font-semibold text-primary">Rechtliches</p>
+      <ul class="mt-2 space-y-1">
+        <li><a class="hover:text-primary underline underline-offset-2" href="impressum.html">Impressum</a></li>
+        <li><a class="hover:text-primary underline underline-offset-2" href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </nav>
+    <div class="text-sm text-ink/70 md:text-right">
+      <p>© <span id="year"></span> Wangerland Touristik</p>
+      <a class="mt-1 inline-block hover:text-primary underline underline-offset-2" href="index.html#referenzen">Referenzen</a>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
