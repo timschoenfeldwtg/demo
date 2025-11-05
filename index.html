@@ -1,59 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Was ist gerade los? – Wangerland Events</title>
-
-  <!-- Basis-Styling (minimal) -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wangerland Widgets für Leistungsträger</title>
+  <meta name="description" content="Startseite mit Widget-Grid für Wetter, Events, Karten, Webcams u.v.m." />
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind via CDN für GitHub Pages -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#002341',
+            accent:  '#007996',
+            ink:     '#111111',
+            border:  '#e6e6e6',
+            bg:      '#ffffff',
+            hilite:  '#ffe500'
+          },
+          fontFamily: {
+            sans: ['Inter','system-ui','-apple-system','Segoe UI','Arial','sans-serif']
+          },
+          boxShadow: {
+            soft: '0 10px 30px rgba(0,0,0,.06)'
+          },
+          borderRadius: {
+            '2xl': '1rem'
+          }
+        }
+      }
+    }
+  </script>
   <style>
-    body {
-      font-family: system-ui, Arial, sans-serif;
-      background: #f4f4f4;
-      color: #222;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: #005a6a;
-      color: #fff;
-      padding: 1rem;
-      text-align: center;
-    }
-    main {
-      max-width: 1200px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background: #fff;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
-    h1 {
-      font-size: 1.4rem;
-      text-align: center;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #666;
-    }
+    :root { color-scheme: light; }
+    html { scroll-behavior: smooth; }
   </style>
 </head>
-
-<body>
-  <header>
-    <h1>Was ist gerade los im Wangerland?</h1>
+<body class="bg-bg text-ink font-sans">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-border">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 py-4 flex items-center justify-between gap-4">
+      <a class="inline-flex items-center gap-2 text-primary font-semibold" href="#" aria-label="Startseite">
+        <span class="inline-block w-2 h-2 rounded-full bg-accent"></span>
+        <span>Wangerland Widgets für Leistungsträger</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-5 text-sm">
+        <a class="hover:text-primary" href="#wetter">Wetter</a>
+        <a class="hover:text-primary" href="#events">Veranstaltungen</a>
+        <a class="hover:text-primary" href="#karte">Karte</a>
+        <a class="hover:text-primary" href="#webcams">Webcams</a>
+        <a class="rounded-full px-3 py-1.5 bg-primary text-white" href="#newsletter">Newsletter</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-   <script 
-	id="et4pages" 
-	type="text/javascript" 
-	src="https://willkommen.wangerland.de/de/wangerland/default/search/Event/Lat:53.686128234917845/Lng:8.017117310485506/all:all/sort:chronological?i_target=et4pages">
-</script>
+  <!-- Hero / Intro -->
+  <section class="mx-auto max-w-7xl px-4 sm:px-6 py-8">
+    <div class="grid md:grid-cols-5 gap-6 items-stretch">
+      <div class="md:col-span-3 bg-white border border-border rounded-2xl p-6 shadow-soft">
+        <h1 class="text-2xl font-semibold text-primary">Moin!</h1>
+        <p class="mt-3 leading-relaxed" id="teaser-text">
+          Diese Seite bietet die Möglichkeit, strukturierte touristische Daten für die eigene Website zu ziehen. Bei Rückfragen stehen wir gerne unter <a class="text-accent underline underline-offset-2" href="mailto:info@wangerland.de">info@wangerland.de</a> zur Verfügung.
+        </p>
+        <div class="mt-4 flex items-center gap-3 text-sm text-ink/70">
+          <span class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-hilite"></span> Stichtag</span>
+          <time id="last-updated" aria-live="polite">Letzte Aktualisierung: —</time>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <footer>
-    <p>© Wangerland Touristik GmbH | Integration Beispiel für GitHub Pages</p>
+  <!-- Vollbreit: Veranstaltungsgalerie (ET4) mit Consent -->
+  <section id="events-gallery" class="mt-8 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+    <div class="bg-white border-t border-b border-border">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 py-6">
+        <header class="mb-4 flex items-center justify-between">
+          <h2 class="text-xl font-semibold text-primary">Veranstaltungen – Galerie</h2>
+          <span class="text-xs text-ink/60">Vollbreit · DSGVO‑Consent</span>
+        </header>
+      </div>
+
+      <div class="px-0 relative">
+        <!-- Ziel-Container, in den ET4 rendert -->
+        <div id="et4pages" class="w-full min-h-[360px] sm:min-h-[420px] md:min-h-[520px] lg:min-h-[600px] xl:min-h-[680px] 2xl:min-h-[720px]"></div>
+
+        <!-- Consent-Overlay (nur sichtbar bis Zustimmung) -->
+        <div id="et4-consent" class="absolute inset-0 bg-white/90 backdrop-blur border-t border-b border-border grid place-items-center">
+          <div class="mx-auto max-w-3xl w-full px-4 sm:px-6 py-8">
+            <div class="rounded-2xl border border-border shadow-soft bg-white p-6">
+              <h3 class="text-lg font-semibold text-primary">Externe Inhalte laden?</h3>
+              <p class="mt-2 text-sm text-ink/70">Die Galerie wird von <span class="font-medium">willkommen.wangerland.de</span> eingebunden. Du kannst das dauerhaft erlauben oder nur einmalig laden.</p>
+              <div class="mt-4 flex flex-wrap gap-3">
+                <button id="et4-allow-once" class="rounded-xl border border-border px-4 py-2 hover:border-primary/40">Nur dieses Mal laden</button>
+                <button id="et4-allow-always" class="rounded-xl bg-primary text-white px-4 py-2">Immer laden</button>
+                <button id="et4-decline" class="rounded-xl border border-border px-4 py-2 text-ink/60">Ablehnen</button>
+              </div>
+              <p class="mt-3 text-xs text-ink/60">Auswahl wird lokal gespeichert (<code>localStorage</code>).</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Loader (sichtbar bis erste Inhalte von ET4 da sind) -->
+        <div id="et4-loader" class="hidden grid place-items-center py-10 text-sm text-ink/60">
+          <div class="animate-pulse">Lade Veranstaltungen …</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-border">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 py-10 text-sm text-ink/70 grid gap-2 md:flex md:items-center md:justify-between">
+      <p>© <span id="year"></span> Wangerland Touristik</p>
+      <nav class="flex gap-4">
+        <a class="hover:text-primary" href="#">Hier</a>
+        <a class="hover:text-primary" href="#">wird noch</a>
+        <a class="hover:text-primary" href="#">gearbeitet</a>
+      </nav>
+    </div>
   </footer>
+
+  <!-- Minimal JS: Progressive Enhancement & Consent-Handling -->
+  <script>
+    (function(){
+      // Zeit/Year
+      const last = document.getElementById('last-updated');
+      const year = document.getElementById('year');
+      try {
+        if (last) last.textContent = 'Letzte Aktualisierung: ' + new Date().toLocaleString('de-DE', { dateStyle:'medium', timeStyle:'short' });
+      } catch(e) {}
+      if (year) year.textContent = new Date().getFullYear();
+
+      // Consent + Embed
+      const KEY = 'et4_consent';
+      const target  = document.getElementById('et4pages');
+      const consent = document.getElementById('et4-consent');
+      const loader  = document.getElementById('et4-loader');
+      const allowOnce  = document.getElementById('et4-allow-once');
+      const allowAlways= document.getElementById('et4-allow-always');
+      const decline    = document.getElementById('et4-decline');
+
+      function loadET4(){
+        if (!target) return;
+        if (loader) loader.classList.remove('hidden');
+        if (!document.getElementById('et4-script')){
+          const s = document.createElement('script');
+          s.id = 'et4-script';
+          s.type = 'text/javascript';
+          s.src = 'https://willkommen.wangerland.de/de/wangerland/default/search/Event/Lat:53.68612670932186/Lng:8.017145762400807/all:all/mode:next_days,3/sort:chronological?i_target=et4pages';
+          s.async = true;
+          s.onload = () => { if (loader) loader.classList.add('hidden'); };
+          s.onerror = () => { if (loader) loader.textContent = 'Konnte Events nicht laden.'; };
+          document.body.appendChild(s);
+        }
+        if (consent) consent.style.display = 'none';
+      }
+
+      const hasAlways = () => (typeof localStorage !== 'undefined' && localStorage.getItem(KEY) === 'always');
+      if (hasAlways()) loadET4();
+
+      if (allowOnce)  allowOnce.addEventListener('click', () => loadET4());
+      if (allowAlways)allowAlways.addEventListener('click', () => { try { localStorage.setItem(KEY,'always'); } catch(e){} loadET4(); });
+      if (decline)    decline.addEventListener('click', () => { if (consent) consent.style.display = 'none'; });
+
+      // Platzhalter-Ziele, damit Nav-Anker existieren
+      const ensureAnchor = (id) => {
+        if (!document.getElementById(id)){
+          const ph = document.createElement('div');
+          ph.id = id;
+          ph.className = 'sr-only';
+          document.body.appendChild(ph);
+        }
+      };
+      ['wetter','karte','webcams','newsletter'].forEach(ensureAnchor);
+    })();
+  </script>
 </body>
 </html>
